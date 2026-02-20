@@ -1,4 +1,4 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'mi portafolio'
+title = 'Mi portafolio'
 theme = 'ananke'

@@ -142,3 +142,7 @@ hugo server: Inicia un servidor local para previsualizar el sitio.
 ## **Conclusiones**
 
 En conclusión, esta práctica permitió comprender y aplicar herramientas fundamentales en el desarrollo web moderno. El uso de Git como sistema de control de versiones facilitó la organización y el seguimiento de los cambios en el proyecto, mientras que GitHub permitió almacenar y compartir el repositorio en la nube, favoreciendo el trabajo colaborativo y el respaldo del código. Por su parte, Markdown simplificó la creación de contenido estructurado mediante una sintaxis clara y ligera. Estos conocimientos se integraron con Hugo, un generador de sitios estáticos que transforma archivos Markdown en páginas web funcionales, y con GitHub Pages, que hizo posible publicar el sitio en internet de manera sencilla y gratuita. En conjunto, estas herramientas fueron utiles para pasar desde la escritura de contenido hasta la publicación de una página web completa, comprendiendo el flujo real de desarrollo, control de versiones y despliegue profesional de un proyecto.
+
+[Portafolio Github](https://github.com/andresmendez52-sys/portafolio)
+
+[sitio HUGO](https://andresmendez52-sys.github.io/portafolio/)
