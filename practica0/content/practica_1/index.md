@@ -9,6 +9,43 @@ En esta practica se enfoco en el desarrollo de un programa que simule la utiliza
 
 ## Diseño
 
+PrintJob_t es una estructura que representa un trabajo de impresión dentro del sistema. En ella se guardan todos los datos necesarios para identificar y procesar un documento que se enviará a la impresora.
+
+Campos principales:
+
++ id: número único que identifica cada trabajo de impresión.
+
++ usuario: nombre de la persona que envió el documento a imprimir.
+
++ documento: nombre del archivo o documento que se va a imprimir.
+
++ paginas_totales: número total de páginas que tiene el documento.
+
++ paginas_restantes: número de páginas que todavía faltan por imprimirse. Este valor va disminuyendo conforme se procesa el trabajo.
+
++ copias: cantidad de copias que se desean imprimir.
+
++ prioridad: indica la importancia del trabajo (por ejemplo normal o alta).
+
++ estado: indica en qué situación se encuentra el trabajo, por ejemplo en cola, imprimiendo o completado.
+
+La cola estatica se implementa un areglo de tamaño fijo por lo que los documento se agregan al final de la sola y se eliminas desde el frente, sus elementos principales son primer elemento, ultimo elemento y el tamaño de la cola
+
+````
+primer elemento -> [Trabajo1][Trabajo2][Trabajo3] <- ultimo elemento   
+cantidad = 3
+`````
+
+ mientras que el memoria dinamica se utilizan listas enlasadas por lo que sus principales componen tes son lso punteros que conenctan a los nodos, un puntero al ultimo nodo(cola) y un puntero al primer nodo(cabeza).
+
+````
+
+ cabeza -> [Trabajo1] -> [Trabajo2] -> [Trabajo3] -> NULL
+
+                                              ↑
+                                             cola
+````
+
 ## Implementacion
 ### Funciones utilizadas
  * void inicializarCola(ColaDinamica *cola);
@@ -54,9 +91,10 @@ En esta practica se enfoco en el desarrollo de un programa que simule la utiliza
 
 ## Analisis comparativo
 
+
 ## Conclusiones
 
-## Rferencias
+## Referencias
 
 GeeksforGeeks. (2024). Queue data structure. GeeksforGeeks. https://www.geeksforgeeks.org/queue-data-structure/
 
