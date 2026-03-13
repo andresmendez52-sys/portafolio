@@ -87,12 +87,133 @@ cantidad = 3
 
 ## Demostracion de conseptos
 
+**Alcance y Duracion**
+
+Dentro del codigo se utilizan diversas variables donde se pueden clasificar dependiendo el alcance de dichas variables, es decir en que parte y hasta donde son visibles y utilizables esas variables, por ejemplo:
+
+en la funciones capturarDatos
+
+````C
+void capturarDatos(ColaDinamica *cola, int *siguiente_id)
+{
+    TrabajoImpresion trabajo;
+    char buffer[100];
+
+    printf("Nombre del usuario: ");
+    fgets(trabajo.usuario, sizeof(trabajo.usuario), stdin);
+    trabajo.usuario[strcspn(trabajo.usuario, "\n")] = '\0';
+
+    printf("Numero de paginas: ");
+    fgets(buffer, sizeof(buffer), stdin);
+    trabajo.paginas_totales = atoi(buffer);
+
+    if (trabajo.paginas_totales <= 0)
+    {
+        printf("Numero de paginas invalido\n");
+        return;
+    }
+    agregarTrabajo(cola, trabajo);
+}
+````
+se utiliza la variable local buffer, la cual se considera local ya que esta varible fue declaada desntro de esta funcion asi que su alcance solamente se encuentra denro de la funcion y al momento de salir, los datos de la variable se pierde 
+
+por otro lado en el encavezado de la scesion 1
+
+`````C
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define MAX_USUARIO 32
+#define MAX_DOCUMENTO 48
+#define MAX_TRABAJOS 10
+
+``````
+se definen tres variables globales (ya que estan fuera de cualquier funcion) las cuales tienen alcancce completo en todo el codigo y su valor no puede cambiar, y ademas es una buena practica el ponerlas en mayuscula
+
+**Memoria**
+
+Otro consepto muy importante utilizado en esta pactica es el stack el cual es la memoria que se usa para variables locales y parámetros de funciones.
+Se administra automáticamente por el programa.
+por ejemplo:
+``````c
+void capturarDatos(ColaDinamica *cola, int *siguiente_id)
+{
+    TrabajoImpresion trabajo;
+    char buffer[100];
+}
+``````
+se utilia el stack para guardar informacion temporalmente y se libera automaticamente cuando sale de la funcion. 
+
+por otra parte tambien esta el HEAP.
+El heap es la memoria que se reserva dinámicamente durante la ejecución del programa.
+
+Se usa cuando no sabemos cuánta memoria necesitaremos, se utilizan los comandos malloc(), calloc() y realloc()
+`````c
+Nodo *nuevo = (Nodo*) malloc(sizeof(Nodo));
+``````
+y para liberar la memoria se utiliza el comado free()
+
+**subprogramas**
+
+Un subprograma es basicamente una funcion que realiza un conjunto de operaciones espesificas donde pueden o no regresar un valor y/o pedir parametros.
+en este punto es necesario saber que al mandar datos a una funcion se puede hacer de dos maneras, por valor o por referencias donde se envian por valor cuando e manda un numero o dato espesifico como por ejemplo: 
+
+````
+int main()
+{
+    int a = 5;
+    cambiar(a);
+
+    printf("%d", a);
+}
+`````
+
+donde al llamar a la funcion cambiar, se mada directamene la variable a con un valor guardado.
+
+por otro lado estan los parametros por referencias que al contratio que con los de vlaor aqui no se manejan valores si no referencias a dirrecciones de memoria a travez de punteros utilizando el simbolo '&'.
+
+````
+int main()
+{
+    int a = 5;
+    cambiar(&a);
+
+    printf("%d", a);
+}
+````
+
+El tipo de parámetro que se utilice depende de lo que se quiera lograr con la función. Cuando un parámetro se pasa por valor, la función recibe una copia del dato original, por lo que cualquier modificación realizada dentro de la función solo afecta a esa copia y no a la variable original. Esta copia existe únicamente durante la ejecución de la función.
+
+Por otro lado, cuando un parámetro se pasa por referencia, la función recibe la dirección de memoria de la variable, lo que permite modificar directamente su valor original. Por esta razón, cuando se desea que una función cambie el valor de una variable fuera de ella, se utiliza el paso de parámetros por referencia.
 ## simulacion
+
+En la cesion 3 agregamos una nueva opcion al menu la cual geeraba una simulacion que simulava el procesamiento de laa paguinas de cada documento de la cola donde realzamos anumaciones en la terminal.
+
+
+
+
 
 ## Analisis comparativo
 
+En programación existen diferentes formas de administrar la memoria para almacenar datos. Dos de las más comunes son la memoria estática y la memoria dinámica.
+La memoria estática se caracteriza por tener un tamaño fijo que se define antes de que el programa se ejecute. Este tipo de memoria se reserva desde el inicio del programa y permanece disponible durante toda su ejecución. Cuando se trabaja con memoria estática normalmente se utilizan arreglos, ya que estos requieren que su tamaño sea especificado previamente. Debido a esto, la cantidad de elementos que se pueden almacenar es limitada y no puede cambiar mientras el programa está en funcionamiento. Aunque esta forma de manejo de memoria es más simple y fácil de implementar, también puede generar limitaciones, ya que si se necesita almacenar más datos de los previstos no será posible sin modificar el tamaño del arreglo en el código. Sin embargo, su principal ventaja es que su manejo es más sencillo ya que el acceso a los datos del arreglo se puede acceder directamente atravez del indice y no requiere reservar ni liberar memoria manualmente durante la ejecución del programa.
+
+Por otro lado, la memoria dinámica no requiere un tamaño fijo, ya que puede cambiar durante la ejecución del programa conforme se agregan o eliminan datos. En este tipo de administración de memoria es común utilizar listas enlazadas, las cuales están formadas por nodos que se conectan entre sí mediante punteros. Cada nodo almacena cierta información y una referencia al siguiente nodo de la lista, lo que permite que la estructura pueda crecer o reducirse según sea necesario. Gracias a esto, la memoria se utiliza de una forma más flexible y eficiente, ya que solo se reserva el espacio que realmente se necesita en cada momento. Sin embargo, su manejo suele ser un poco más complejo, porque es necesario reservar y liberar memoria manualmente durante la ejecución del programa.
+Al utilizar memoria dinámica es necesario el uso de funciones como malloc(), calloc(), realloc() y free(), las cuales permiten reservar, modificar o liberar espacio en memoria durante la ejecución del programa. Estas funciones son fundamentales cuando se trabaja con estructuras de datos dinámicas como listas enlazadas, pilas o colas, ya que permiten administrar la memoria de manera flexible según las necesidades del programa.
+
+| Característica | Memoria estática | Memoria dinámica |
+|----------------|------------------|------------------|
+| Tamaño | Fijo | Variable |
+| Estructura común | Arreglos | Listas enlazadas |
+| Uso de memoria | Se reserva al inicio | Se asigna durante la ejecución |
+| Manejo | Más sencillo | Más flexible |
 
 ## Conclusiones
+
+En conclusión, el tipo de almacenamiento de memoria dependerá de la flexibilidad que necesitemos para nuestro programa. Si la cantidad de datos siempre es la misma, es más conveniente utilizar memoria estática, ya que su tamaño se define desde el inicio del programa y facilita el acceso a los datos a través de índices. Esto permite una implementación más sencilla y un manejo más directo de la información.
+
+Sin embargo, si se necesita que la memoria se ajuste a una cantidad variable de datos, es más conveniente utilizar memoria dinámica, ya que permite reservar o liberar memoria durante la ejecución del programa. De esta forma, el tamaño de la memoria puede adaptarse según las necesidades del programa, lo que resulta útil cuando no se conoce con anticipación la cantidad exacta de datos que se van a manejar.
 
 ## Referencias
 
