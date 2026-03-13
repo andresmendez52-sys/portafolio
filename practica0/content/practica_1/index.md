@@ -157,7 +157,7 @@ y para liberar la memoria se utiliza el comado free()
 **subprogramas**
 
 Un subprograma es basicamente una funcion que realiza un conjunto de operaciones espesificas donde pueden o no regresar un valor y/o pedir parametros.
-en este punto es necesario saber que al mandar datos a una funcion se puede hacer de dos maneras, por valor o por referencias donde se envian por valor cuando e manda un numero o dato espesifico como por ejemplo: 
+en este punto es necesario saber que al mandar datos a una funcion se puede hacer de dos maneras, por valor o por referencias donde se envian por valor cuando se manda un numero o dato espesifico como por ejemplo: 
 
 ````
 int main()
@@ -169,9 +169,9 @@ int main()
 }
 `````
 
-donde al llamar a la funcion cambiar, se mada directamene la variable a con un valor guardado.
+donde al llamar a la funcion cambiar, se mana directamene la variable 'a' con un valor guardado.
 
-por otro lado estan los parametros por referencias que al contratio que con los de vlaor aqui no se manejan valores si no referencias a dirrecciones de memoria a travez de punteros utilizando el simbolo '&'.
+por otro lado estan los parametros por referencias que al contratio que con los de valor aqui no se manejan valores si no que se envian referencias a dirrecciones de memoria a travez de punteros utilizando el simbolo '&'.
 
 ````
 int main()
@@ -188,11 +188,13 @@ El tipo de parámetro que se utilice depende de lo que se quiera lograr con la f
 Por otro lado, cuando un parámetro se pasa por referencia, la función recibe la dirección de memoria de la variable, lo que permite modificar directamente su valor original. Por esta razón, cuando se desea que una función cambie el valor de una variable fuera de ella, se utiliza el paso de parámetros por referencia.
 ## simulacion
 
-En la cesion 3 agregamos una nueva opcion al menu la cual geeraba una simulacion que simulava el procesamiento de laa paguinas de cada documento de la cola donde realzamos anumaciones en la terminal.
+En la sesión 3 se agregó una nueva opción al menú que permite generar una simulación del procesamiento de los documentos en la cola de impresión. Esta simulación muestra cómo se van procesando las páginas de cada documento utilizando pequeñas animaciones en la terminal.
 
+![Captura del programa](captura_impresion_1.jpg)
 
+La imagen anterior muestra una captura del programa en funcionamiento dentro de la opción de simulación. En esta función se simula el procesamiento de cada página del documento, mostrando en pantalla los datos principales del trabajo de impresión, como el ID, el nombre del usuario, el nombre del documento y el número total de páginas.
 
-
+Además, mediante una barra de progreso se representa visualmente el avance de la impresión, procesando las páginas una por una. El sistema comienza siempre con el primer documento que fue agregado a la cola, siguiendo el orden en que los trabajos fueron ingresados.
 
 ## Analisis comparativo
 
@@ -224,3 +226,9 @@ GeeksforGeeks. (2024). Dynamic memory allocation in C using malloc, calloc, free
 Tutorialspoint. (2024). Data structures – queues. TutorialsPoint. https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm
 
 Programiz. (2024). C dynamic memory allocation. Programiz. https://www.programiz.com/c-programming/c-dynamic-memory-allocation
+
+## Repositorio en GitHub y mi sitio estatico
+
+[Portafolio Github](https://github.com/andresmendez52-sys/portafolio)
+
+[sitio HUGO](https://andresmendez52-sys.github.io/portafolio/)
