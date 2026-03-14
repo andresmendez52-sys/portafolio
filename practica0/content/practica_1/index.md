@@ -211,6 +211,27 @@ Al utilizar memoria dinámica es necesario el uso de funciones como malloc(), ca
 | Uso de memoria | Se reserva al inicio | Se asigna durante la ejecución |
 | Manejo | Más sencillo | Más flexible |
 
+## Capturas de ejecusion 
+
+**Menu Principal**
+![Captura del programa](menu_principal.png)
+
+**agregar tarea**
+![Captura del programa](agreagr_tarea.png)
+
+**Procesar trabajo**
+![Captura del programa](procesando.png)
+
+**Listar Cola**
+![Captura del programa](listar.png)
+
+**simular toda la cola**
+![Captura del programa](imagen_1.jpg)
+
+![Captura del programa](imagen_3.jpg)
+
+
+
 ## Conclusiones
 
 En conclusión, el tipo de almacenamiento de memoria dependerá de la flexibilidad que necesitemos para nuestro programa. Si la cantidad de datos siempre es la misma, es más conveniente utilizar memoria estática, ya que su tamaño se define desde el inicio del programa y facilita el acceso a los datos a través de índices. Esto permite una implementación más sencilla y un manejo más directo de la información.
