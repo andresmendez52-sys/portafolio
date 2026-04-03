@@ -6,8 +6,15 @@
     <description>Recent content on Mi portafolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Feb 2026 18:06:38 -0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Feb 2026 18:07:31 -0800</lastBuildDate>
     <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Practica_2: Paradigma orientado a objetos</title>
+      <link>https://example.org/practica_2/</link>
+      <pubDate>Mon, 16 Feb 2026 18:07:31 -0800</pubDate>
+      <guid>https://example.org/practica_2/</guid>
+      <description>&lt;h2 id=&#34;introduccion&#34;&gt;Introduccion&lt;/h2&gt;&#xA;&lt;p&gt;En este documento se describe el proceso y los conceptos básicos de la programación orientada a objetos, a través del desarrollo de un programa sencillo implementado en el lenguaje Python utilizando este paradigma. El objetivo es facilitar la comprensión de dichos conceptos mediante un ejemplo práctico.&lt;/p&gt;&#xA;&lt;p&gt;El programa consiste en un sistema que simula la gestión de un estacionamiento (parking), en el cual se pueden administrar los vehículos que ingresan y salen, así como calcular las ganancias generadas por cada automóvil.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Practica_1: Elementos basicos de los lenguajes de programacion</title>
       <link>https://example.org/practica_1/</link>
