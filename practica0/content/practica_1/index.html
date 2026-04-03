@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p>+++
+date = '2026-02-16T18:06:38-08:00'
+draft = false
+title = 'Practica_1: Elementos basicos de los lenguajes de programacion'
++++</p>
+<h2 id="introduccion">Introduccion</h2>
+<p>En esta practica se enfoco en el desarrollo de un programa que simule la utilizacion de colas de impresion en lenguaje C. El programa se realizara en tres sesiones donde primero realizamos el programa utilizando memoria estatica, posteriormente en la sesion 2 migramos el programa a memoria dinamica atravez de listas enlazadas y finalmente en la sesion tres agregamos una obsion al memnu para crear una simulacion de proseso de impresion y mejorar el codigo</p>
+<h2 id="dise%C3%B1o">Diseño</h2>
+<p>PrintJob_t es una estructura que representa un trabajo de impresión dentro del sistema. En ella se guardan todos los datos necesarios para identificar y procesar un documento que se enviará a la impresora.</p>
+<p>Campos principales:</p>
+<ul>
+<li>
+<p>id: número único que identifica cada trabajo de impresión.</p>
+</li>
+<li>
+<p>usuario: nombre de la persona que envió el documento a imprimir.</p>
+</li>
+<li>
+<p>documento: nombre del archivo o documento que se va a imprimir.</p>
+</li>
+<li>
+<p>paginas_totales: número total de páginas que tiene el documento.</p>
+</li>
+<li>
+<p>paginas_restantes: número de páginas que todavía faltan por imprimirse. Este valor va disminuyendo conforme se procesa el trabajo.</p>
+</li>
+<li>
+<p>copias: cantidad de copias que se desean imprimir.</p>
+</li>
+<li>
+<p>prioridad: indica la importancia del trabajo (por ejemplo normal o alta).</p>
+</li>
+<li>
+<p>estado: indica en qué situación se encuentra el trabajo, por ejemplo en cola, imprimiendo o completado.</p>
+</li>
+</ul>
+<p>La cola estatica se implementa un areglo de tamaño fijo por lo que los documento se agregan al final de la sola y se eliminas desde el frente, sus elementos principales son primer elemento, ultimo elemento y el tamaño de la cola</p>
+<pre class="hljs"><code><div>primer elemento -&gt; [Trabajo1][Trabajo2][Trabajo3] &lt;- ultimo elemento   
+cantidad = 3
+</div></code></pre>
+<p>mientras que el memoria dinamica se utilizan listas enlasadas por lo que sus principales componen tes son lso punteros que conenctan a los nodos, un puntero al ultimo nodo(cola) y un puntero al primer nodo(cabeza).</p>
+<pre class="hljs"><code><div>
+ cabeza -&gt; [Trabajo1] -&gt; [Trabajo2] -&gt; [Trabajo3] -&gt; NULL
+
+                                              ↑
+                                             cola
+</div></code></pre>
+<h2 id="implementacion">Implementacion</h2>
+<h3 id="funciones-utilizadas">Funciones utilizadas</h3>
+<ul>
+<li>
+<p>void inicializarCola(ColaDinamica *cola);</p>
+<p>Esta funcion se encarga basicamente de crear la cola e inicializarla en cero (en caso de utilizar la memoria estatica) o apuntar a NULL (en caso de utilizar memoria dinamica), en otras palabras inicializa la cola vacia</p>
+</li>
+<li>
+<p>int colaVacia(const ColaDinamica *cola);</p>
+<p>esta funcion verifica que la lista este vacia y regresa 1 si es que esta vacia o cero si es que no lo esta, esta funcion, al contrario de la funcion de inicializar, no modifica a la cola, simplemente verifica que este vacia</p>
+</li>
+<li>
+<p>void agregarTrabajo(ColaDinamica *cola,TrabajoImpresion trabajo);</p>
+<p>al llamar a esta funcion agrega un trabajo a la cola y aumenta la cantidad de datos que tienen guardada, esta funcion tambien verifica si la el arreglo esta llego, de lo contrario agega una nuev tarea al final, tarea que el ususario ingresa dando le los datos de el titulo, autor y nuemro de paguinas.
+en el caso de la memoria dinamica tambien ajusta los punteros de la cola siguiente y anterior los cuales controla los nodos que se encuentran antes y despues del nuevo nodo.</p>
+</li>
+<li>
+<p>void capturarDatos(ColaDinamica *cola, int siguiente_id);</p>
+<p>La función capturarDatos se encarga de pedir al usuario la información de un trabajo de impresión, como el nombre del usuario, el documento y el número de páginas. Primero valida que los datos no estén vacíos o incorrectos. Después asigna algunos valores al trabajo, como su ID, estado, prioridad y páginas restantes. Finalmente intenta agregar el trabajo a la cola de impresión y muestra un mensaje indicando si se agregó correctamente o si la cola está llena.</p>
+<p>En este caso se usa memoria estática, por otro lado, si se usara memoria dinámica, los trabajos se crean con malloc y se almacenan en  listas enlazadas y colas dinámicas, haciendo que la cola crezca o disminuya en tamaño según sea necesario.</p>
+</li>
+<li>
+<p>void verSiguienteTrabajo(const ColaDinamica *cola);</p>
+<p>La función verSiguienteTrabajo muestra la información del primer trabajo en la cola de impresión. Primero verifica si la cola está vacía; si lo está, muestra un mensaje y termina. Si hay trabajos, obtiene el que está al frente de la cola y muestra sus datos principales como ID, usuario, documento y número de páginas. Al usar memoria dinámica, los trabajos se almacenan en nodos enlazados que se crean y eliminan durante la ejecución del programa</p>
+</li>
+<li>
+<p>void procesarTrabajo(ColaDinamica *cola);</p>
+<p>se encarga de atender el primer trabajo de la cola de impresión. Primero revisa si la cola está vacía; si lo está, muestra un mensaje y termina. Si hay trabajos, toma el que está al frente, muestra su ID y el documento que se está procesando. Después mueve el frente de la cola al siguiente nodo y libera la memoria del trabajo que ya se procesó usando free. Esto se hace porque la cola utiliza memoria dinámica, donde los nodos se crean y eliminan durante la ejecución del programa.</p>
+<p>en caso de ser memoria estatica, es deci , que los trabajos se almacenen en un arreglo, simplemente los datos del arreglo de moveran y se disminuira el tamaño actual del arreglo reutilizando el espacio ya recervado</p>
+</li>
+<li>
+<p>void listarCola(const ColaDinamica *cola);</p>
+<p>atravez de una estructura de repeticion for, se imprimen todos los trabajos que esten guardados la lista o el arreglo dependiendo el tipo de memoria que utilice, imprimirndo los datos de cada uno de los nodos o indices, el id, nombre de ussuario, nombre del documento y nuemro de paginas, ovbiamente tambien verificando que no este vacia la lista o  arreglo</p>
+</li>
+<li>
+<p>void destruirCola(ColaDinamica *cola);</p>
+<p>esta funcion solo se utiliza en la cesion dos para librerar la memori, esta funcion lo que hace es que con ayuda de una estructura de repeticion, se para nodo por nodo y se libera la memoria individualmente con el comando free() esto para librear el espacio de memoria que utilizava ya que en esa secion utilizamos memoria dinamica, la memoria dinamica requiere que liberemos la memoria manualmente con free() para no ener problemas</p>
+</li>
+</ul>
+<h2 id="demostracion-de-conseptos">Demostracion de conseptos</h2>
+<p><strong>Alcance y Duracion</strong></p>
+<p>Dentro del codigo se utilizan diversas variables donde se pueden clasificar dependiendo el alcance de dichas variables, es decir en que parte y hasta donde son visibles y utilizables esas variables, por ejemplo:</p>
+<p>en la funciones capturarDatos</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">capturarDatos</span><span class="hljs-params">(ColaDinamica *cola, <span class="hljs-keyword">int</span> *siguiente_id)</span>
+</span>{
+    TrabajoImpresion trabajo;
+    <span class="hljs-keyword">char</span> <span class="hljs-built_in">buffer</span>[<span class="hljs-number">100</span>];
+
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Nombre del usuario: "</span>);
+    fgets(trabajo.usuario, <span class="hljs-keyword">sizeof</span>(trabajo.usuario), <span class="hljs-built_in">stdin</span>);
+    trabajo.usuario[<span class="hljs-built_in">strcspn</span>(trabajo.usuario, <span class="hljs-string">"\n"</span>)] = <span class="hljs-string">'\0'</span>;
+
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Numero de paginas: "</span>);
+    fgets(<span class="hljs-built_in">buffer</span>, <span class="hljs-keyword">sizeof</span>(<span class="hljs-built_in">buffer</span>), <span class="hljs-built_in">stdin</span>);
+    trabajo.paginas_totales = atoi(<span class="hljs-built_in">buffer</span>);
+
+    <span class="hljs-keyword">if</span> (trabajo.paginas_totales &lt;= <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Numero de paginas invalido\n"</span>);
+        <span class="hljs-keyword">return</span>;
+    }
+    agregarTrabajo(cola, trabajo);
+}
+</div></code></pre>
+<p>se utiliza la variable local buffer, la cual se considera local ya que esta varible fue declaada desntro de esta funcion asi que su alcance solamente se encuentra denro de la funcion y al momento de salir, los datos de la variable se pierde</p>
+<p>por otro lado en el encavezado de la scesion 1</p>
+<pre class="hljs"><code><div><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX_USUARIO 32</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX_DOCUMENTO 48</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX_TRABAJOS 10</span>
+
+</div></code></pre>
+<p>se definen tres variables globales (ya que estan fuera de cualquier funcion) las cuales tienen alcancce completo en todo el codigo y su valor no puede cambiar, y ademas es una buena practica el ponerlas en mayuscula</p>
+<p><strong>Memoria</strong></p>
+<p>Otro consepto muy importante utilizado en esta pactica es el stack el cual es la memoria que se usa para variables locales y parámetros de funciones.
+Se administra automáticamente por el programa.
+por ejemplo:</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">capturarDatos</span><span class="hljs-params">(ColaDinamica *cola, <span class="hljs-keyword">int</span> *siguiente_id)</span>
+</span>{
+    TrabajoImpresion trabajo;
+    <span class="hljs-keyword">char</span> <span class="hljs-built_in">buffer</span>[<span class="hljs-number">100</span>];
+}
+</div></code></pre>
+<p>se utilia el stack para guardar informacion temporalmente y se libera automaticamente cuando sale de la funcion.</p>
+<p>por otra parte tambien esta el HEAP.
+El heap es la memoria que se reserva dinámicamente durante la ejecución del programa.</p>
+<p>Se usa cuando no sabemos cuánta memoria necesitaremos, se utilizan los comandos malloc(), calloc() y realloc()</p>
+<pre class="hljs"><code><div>Nodo *nuevo = (Nodo*) <span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Nodo));
+</div></code></pre>
+<p>y para liberar la memoria se utiliza el comado free()</p>
+<p><strong>subprogramas</strong></p>
+<p>Un subprograma es basicamente una funcion que realiza un conjunto de operaciones espesificas donde pueden o no regresar un valor y/o pedir parametros.
+en este punto es necesario saber que al mandar datos a una funcion se puede hacer de dos maneras, por valor o por referencias donde se envian por valor cuando se manda un numero o dato espesifico como por ejemplo:</p>
+<pre class="hljs"><code><div>int main()
+{
+    int a = 5;
+    cambiar(a);
+
+    printf(&quot;%d&quot;, a);
+}
+</div></code></pre>
+<p>donde al llamar a la funcion cambiar, se mana directamene la variable 'a' con un valor guardado.</p>
+<p>por otro lado estan los parametros por referencias que al contratio que con los de valor aqui no se manejan valores si no que se envian referencias a dirrecciones de memoria a travez de punteros utilizando el simbolo '&amp;'.</p>
+<pre class="hljs"><code><div>int main()
+{
+    int a = 5;
+    cambiar(&amp;a);
+
+    printf(&quot;%d&quot;, a);
+}
+</div></code></pre>
+<p>El tipo de parámetro que se utilice depende de lo que se quiera lograr con la función. Cuando un parámetro se pasa por valor, la función recibe una copia del dato original, por lo que cualquier modificación realizada dentro de la función solo afecta a esa copia y no a la variable original. Esta copia existe únicamente durante la ejecución de la función.</p>
+<p>Por otro lado, cuando un parámetro se pasa por referencia, la función recibe la dirección de memoria de la variable, lo que permite modificar directamente su valor original. Por esta razón, cuando se desea que una función cambie el valor de una variable fuera de ella, se utiliza el paso de parámetros por referencia.</p>
+<h2 id="simulacion">simulacion</h2>
+<p>En la sesión 3 se agregó una nueva opción al menú que permite generar una simulación del procesamiento de los documentos en la cola de impresión. Esta simulación muestra cómo se van procesando las páginas de cada documento utilizando pequeñas animaciones en la terminal.</p>
+<p><img src="captura_impresion_1.jpg" alt="Captura del programa"></p>
+<p>La imagen anterior muestra una captura del programa en funcionamiento dentro de la opción de simulación. En esta función se simula el procesamiento de cada página del documento, mostrando en pantalla los datos principales del trabajo de impresión, como el ID, el nombre del usuario, el nombre del documento y el número total de páginas.</p>
+<p>Además, mediante una barra de progreso se representa visualmente el avance de la impresión, procesando las páginas una por una. El sistema comienza siempre con el primer documento que fue agregado a la cola, siguiendo el orden en que los trabajos fueron ingresados.</p>
+<h2 id="analisis-comparativo">Analisis comparativo</h2>
+<p>En programación existen diferentes formas de administrar la memoria para almacenar datos. Dos de las más comunes son la memoria estática y la memoria dinámica.
+La memoria estática se caracteriza por tener un tamaño fijo que se define antes de que el programa se ejecute. Este tipo de memoria se reserva desde el inicio del programa y permanece disponible durante toda su ejecución. Cuando se trabaja con memoria estática normalmente se utilizan arreglos, ya que estos requieren que su tamaño sea especificado previamente. Debido a esto, la cantidad de elementos que se pueden almacenar es limitada y no puede cambiar mientras el programa está en funcionamiento. Aunque esta forma de manejo de memoria es más simple y fácil de implementar, también puede generar limitaciones, ya que si se necesita almacenar más datos de los previstos no será posible sin modificar el tamaño del arreglo en el código. Sin embargo, su principal ventaja es que su manejo es más sencillo ya que el acceso a los datos del arreglo se puede acceder directamente atravez del indice y no requiere reservar ni liberar memoria manualmente durante la ejecución del programa.</p>
+<p>Por otro lado, la memoria dinámica no requiere un tamaño fijo, ya que puede cambiar durante la ejecución del programa conforme se agregan o eliminan datos. En este tipo de administración de memoria es común utilizar listas enlazadas, las cuales están formadas por nodos que se conectan entre sí mediante punteros. Cada nodo almacena cierta información y una referencia al siguiente nodo de la lista, lo que permite que la estructura pueda crecer o reducirse según sea necesario. Gracias a esto, la memoria se utiliza de una forma más flexible y eficiente, ya que solo se reserva el espacio que realmente se necesita en cada momento. Sin embargo, su manejo suele ser un poco más complejo, porque es necesario reservar y liberar memoria manualmente durante la ejecución del programa.
+Al utilizar memoria dinámica es necesario el uso de funciones como malloc(), calloc(), realloc() y free(), las cuales permiten reservar, modificar o liberar espacio en memoria durante la ejecución del programa. Estas funciones son fundamentales cuando se trabaja con estructuras de datos dinámicas como listas enlazadas, pilas o colas, ya que permiten administrar la memoria de manera flexible según las necesidades del programa.</p>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Memoria estática</th>
+<th>Memoria dinámica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tamaño</td>
+<td>Fijo</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td>Estructura común</td>
+<td>Arreglos</td>
+<td>Listas enlazadas</td>
+</tr>
+<tr>
+<td>Uso de memoria</td>
+<td>Se reserva al inicio</td>
+<td>Se asigna durante la ejecución</td>
+</tr>
+<tr>
+<td>Manejo</td>
+<td>Más sencillo</td>
+<td>Más flexible</td>
+</tr>
+</tbody>
+</table>
+<h2 id="capturas-de-ejecusion">Capturas de ejecusion</h2>
+<p><strong>Menu Principal</strong></p>
+<p><img src="menu_principal.png" alt="Captura del programa"></p>
+<p><strong>agregar tarea</strong></p>
+<p><img src="agreagr_tarea.png" alt="Captura del programa"></p>
+<p><strong>Procesar trabajo</strong></p>
+<p><img src="procesando.png" alt="Captura del programa"></p>
+<p><strong>Listar Cola</strong></p>
+<p><img src="listar.png" alt="Captura del programa"></p>
+<p><strong>simular toda la cola</strong></p>
+<p><img src="imagen_1.jpg" alt="Captura del programa"></p>
+<p><img src="imagen_3.jpg" alt="Captura del programa"></p>
+<h2 id="conclusiones">Conclusiones</h2>
+<p>En conclusión, el tipo de almacenamiento de memoria dependerá de la flexibilidad que necesitemos para nuestro programa. Si la cantidad de datos siempre es la misma, es más conveniente utilizar memoria estática, ya que su tamaño se define desde el inicio del programa y facilita el acceso a los datos a través de índices. Esto permite una implementación más sencilla y un manejo más directo de la información.</p>
+<p>Sin embargo, si se necesita que la memoria se ajuste a una cantidad variable de datos, es más conveniente utilizar memoria dinámica, ya que permite reservar o liberar memoria durante la ejecución del programa. De esta forma, el tamaño de la memoria puede adaptarse según las necesidades del programa, lo que resulta útil cuando no se conoce con anticipación la cantidad exacta de datos que se van a manejar.</p>
+<h2 id="referencias">Referencias</h2>
+<p>GeeksforGeeks. (2024). Queue data structure. GeeksforGeeks. https://www.geeksforgeeks.org/queue-data-structure/</p>
+<p>GeeksforGeeks. (2024). Dynamic memory allocation in C using malloc, calloc, free and realloc. GeeksforGeeks. https://www.geeksforgeeks.org/dynamic-memory-allocation-in-c-using-malloc-calloc-free-and-realloc/</p>
+<p>Tutorialspoint. (2024). Data structures – queues. TutorialsPoint. https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm</p>
+<p>Programiz. (2024). C dynamic memory allocation. Programiz. https://www.programiz.com/c-programming/c-dynamic-memory-allocation</p>
+<h2 id="repositorio-en-github-y-mi-sitio-estatico">Repositorio en GitHub y mi sitio estatico</h2>
+<p><a href="https://github.com/andresmendez52-sys/portafolio">Portafolio Github</a></p>
+<p><a href="https://andresmendez52-sys.github.io/portafolio/">sitio HUGO</a></p>
+
+</body>
+</html>

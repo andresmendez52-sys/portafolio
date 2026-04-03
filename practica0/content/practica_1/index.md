@@ -214,18 +214,23 @@ Al utilizar memoria dinámica es necesario el uso de funciones como malloc(), ca
 ## Capturas de ejecusion 
 
 **Menu Principal**
+
 ![Captura del programa](menu_principal.png)
 
 **agregar tarea**
+
 ![Captura del programa](agreagr_tarea.png)
 
 **Procesar trabajo**
+
 ![Captura del programa](procesando.png)
 
 **Listar Cola**
+
 ![Captura del programa](listar.png)
 
 **simular toda la cola**
+
 ![Captura del programa](imagen_1.jpg)
 
 ![Captura del programa](imagen_3.jpg)
