@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p>+++
+date = '2026-02-16T18:07:31-08:00'
+draft = false
+title = 'Practica_2: Paradigma orientado a objetos'
++++</p>
+<h2 id="introduccion">Introduccion</h2>
+<p>En este documento se describe el proceso y los conceptos básicos de la programación orientada a objetos, a través del desarrollo de un programa sencillo implementado en el lenguaje Python utilizando este paradigma. El objetivo es facilitar la comprensión de dichos conceptos mediante un ejemplo práctico.</p>
+<p>El programa consiste en un sistema que simula la gestión de un estacionamiento (parking), en el cual se pueden administrar los vehículos que ingresan y salen, así como calcular las ganancias generadas por cada automóvil.</p>
+<h2 id="modelo-del-dominio">Modelo del dominio</h2>
+<p>El modelo del dominio se refiere a todas aquellas clases que representen la entidades del sistema, junto con sus atributos y sus metodos. Estas clases modelan objetos reales com opodrian ser un auto, una moto o un ticket</p>
+<h3 id="diagrama-uml"><strong>Diagrama UML</strong></h3>
+<p><img src="diagramaUML.jpeg" alt="estructura"></p>
+<h3 id="lista-de-clases">Lista de clases</h3>
+<p>En el progrma se utilizaron 6 clases principales las cuales fueron parking_lot, parking_Spot, vehicle, car y motorcycle, ticket y  rate_Policy donde cada un cumple con una funcion espesifica e importante:</p>
+<p><strong>ParkingLot</strong>
+Clase principal que administra el estacionamiento. Se encarga de registrar la entrada y salida de vehículos, asignar espacios disponibles y calcular los ingresos totales.</p>
+<p><strong>ParkingSpot</strong>
+Representa un espacio de estacionamiento. Controla si está ocupado o libre y qué tipo de vehículo puede aceptar.</p>
+<p><strong>Vehicle</strong>
+Clase base que representa un vehículo dentro del sistema.</p>
+<p><strong>Car / Motorcycle</strong>
+Subclases de Vehicle que permiten diferenciar tipos de vehículos y aplicar reglas específicas mediante herencia.</p>
+<p><strong>Ticket</strong>
+Representa el registro de entrada de un vehículo. Contiene información como el vehículo, el espacio asignado y el estado del ticket.</p>
+<p><strong>RatePolicy</strong>
+Define la lógica de cálculo de tarifas. Permite aplicar polimorfismo al cambiar la forma en que se calcula el costo.</p>
+<h2 id="conseptos-de-programacion-orientada-a-objetos">Conseptos de Programacion Orientada a Objetos</h2>
+<p><strong>Encapsulacion:</strong> es el principio de agrupar datos (atributos) y los métodos que operan sobre ellos en una única unidad, llamada clase, restringiendo el acceso directo a los componentes internos.
+Ejemplo dentro del programa:</p>
+<pre class="hljs"><code><div>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ParkingSpot</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, spot_id: str, allowed_type: str)</span>:</span>
+        self.spot_id = spot_id
+        self.allowed_type = allowed_type
+        self.__occupied = <span class="hljs-literal">False</span>  <span class="hljs-comment"># estado protegido</span>
+        self.current_vehicle = <span class="hljs-literal">None</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">park</span><span class="hljs-params">(self, vehicle)</span>:</span>
+        self.__occupied = <span class="hljs-literal">True</span>
+        self.current_vehicle = vehicle
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">release</span><span class="hljs-params">(self)</span>:</span>
+        self.__occupied = <span class="hljs-literal">False</span>
+        self.current_vehicle = <span class="hljs-literal">None</span>
+    
+<span class="hljs-meta">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">is_occupied</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> self.__occupied
+
+</div></code></pre>
+<p>en este fragmento se puede observar el encapsulamiento ya que __occupied es privada y no se puede modificar directamente, se accede con @property</p>
+<p><strong>abstraccion:</strong> La abstracción se aplica mediante la clase RatePolicy, que define una interfaz común para el cálculo de tarifas a través del método calculate. Esta clase no implementa directamente la lógica, sino que establece un contrato que deben seguir las clases que hereden de ella.</p>
+<p>De esta manera, se separa la lógica de cálculo del resto del sistema, permitiendo cambiar o extender las políticas de cobro sin afectar otras partes del programa.</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RatePolicy</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calculate</span><span class="hljs-params">(self, hours, vehicle_type)</span>:</span>
+        <span class="hljs-keyword">pass</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HourlyRatePolicy</span><span class="hljs-params">(RatePolicy)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calculate</span><span class="hljs-params">(self, hours, vehicle_type)</span>:</span>
+        <span class="hljs-keyword">if</span> vehicle_type == <span class="hljs-string">"CAR"</span>:
+            <span class="hljs-keyword">return</span> hours * <span class="hljs-number">20</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> hours * <span class="hljs-number">10</span>   
+</div></code></pre>
+<p><strong>composicion:</strong> La composición se aplica en la clase ParkingLot, la cual administra una colección de objetos ParkingSpot y Ticket. Estos objetos son creados y gestionados internamente por el estacionamiento, lo que indica una relación de “todo-parte”.</p>
+<p>Por ejemplo, ParkingLot crea y almacena los espacios disponibles en una lista (__spots) y mantiene los tickets activos en una estructura (__active_tickets). Esto implica que los objetos ParkingSpot y Ticket dependen del ciclo de vida del ParkingLot.</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ParkingLot</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, total_car_spots, total_moto_spots, policy)</span>:</span>
+        self.__spots = []              <span class="hljs-comment"># contiene ParkingSpot</span>
+        self.__active_tickets = {}     <span class="hljs-comment"># contiene Ticket</span>
+        self.__policy = policy
+
+        <span class="hljs-comment"># creación de spots (composición)</span>
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(total_car_spots):
+            self.__spots.append(ParkingSpot(<span class="hljs-string">f"C<span class="hljs-subst">{i}</span>"</span>, <span class="hljs-string">"CAR"</span>))
+
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(total_moto_spots):
+            self.__spots.append(ParkingSpot(<span class="hljs-string">f"M<span class="hljs-subst">{i}</span>"</span>, <span class="hljs-string">"MOTORCYCLE"</span>))
+</div></code></pre>
+<p><strong>Herencia:</strong> La herencia se aplica mediante la clase base Vehicle, de la cual derivan las clases Car y Motorcycle. Estas subclases reutilizan los atributos y comportamiento definidos en la clase padre, evitando duplicación de código.</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Vehicle</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, plate: str, vehicle_type: str)</span>:</span>
+        self.plate = plate
+        self.vehicle_type = vehicle_type
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span><span class="hljs-params">(Vehicle)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, plate: str)</span>:</span>
+        super().__init__(plate, <span class="hljs-string">"CAR"</span>)
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Motorcycle</span><span class="hljs-params">(Vehicle)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, plate: str)</span>:</span>
+        super().__init__(plate, <span class="hljs-string">"MOTORCYCLE"</span>)
+
+</div></code></pre>
+<p><strong>Polimorfismo:</strong> El polimorfismo se aplica en la clase ParkingLot al utilizar la interfaz común calculate definida en RatePolicy. En el método exit_vehicle, el cálculo del costo se realiza mediante self.__policy.calculate(...), sin depender de una implementación específica.</p>
+<pre class="hljs"><code><div>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">exit_vehicle</span><span class="hljs-params">(self, ticket_id: int, hours_simulated: float)</span>:</span>
+    <span class="hljs-keyword">if</span> ticket_id <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> self.__active_tickets:
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+    
+    ticket = self.__active_tickets.pop(ticket_id)
+    
+    cost = self.__policy.calculate(hours_simulated, ticket.vehicle.vehicle_type)
+    
+    ticket.spot.release()
+    ticket.close_ticket()
+    self.__total_revenue += cost
+    
+    <span class="hljs-keyword">return</span> cost
+
+</div></code></pre>
+<h2 id="mvc-oon-flask">MVC oon Flask</h2>
+<p>El sistema implementa el patrón de arquitectura Modelo-Vista-Controlador (MVC) utilizando Flask.</p>
+<p>El Modelo (Model) está compuesto por las clases ubicadas en la carpeta models, donde se define la lógica del negocio del sistema, incluyendo la gestión de vehículos, espacios, tickets y tarifas.</p>
+<p>La Vista (View) corresponde a las plantillas HTML ubicadas en la carpeta templates, las cuales permiten la interacción con el usuario mostrando información como la ocupación del estacionamiento y formularios para registrar entradas y salidas.</p>
+<p>El Controlador (Controller) se implementa en el archivo app.py, donde se definen las rutas de Flask. Este componente recibe las solicitudes del usuario, invoca los métodos del modelo y devuelve las vistas correspondientes.</p>
+<p><strong>estructura y flujo del programa</strong></p>
+<p><img src="estructura_proyecto.png" alt="estructura"></p>
+<p><strong>Salidas en terminal</strong></p>
+<p>menu principal</p>
+<p><img src="menu_principal.png" alt="menu"></p>
+<p>registrar entrada</p>
+<p><img src="registro_entrada.png" alt="regstrar entrada"></p>
+<p>registrar salida</p>
+<p><img src="registro_salida.png" alt="registrar salida"></p>
+<p>ocupados</p>
+<p><img src="ocupados.png" alt="ocupados"></p>
+<h2 id="prueba-manual">Prueba Manual</h2>
+<h3 id="prueba-1-registro-completo-de-veh%C3%ADculo"><strong>Prueba 1: Registro completo de vehículo</strong></h3>
+<ol>
+<li>Acceder al sistema en http://127.0.0.1:5000/</li>
+<li>Ir a la sección &quot;Entrada&quot;</li>
+<li>Ingresar una placa (ej: ABC123)</li>
+<li>Seleccionar tipo &quot;Carro&quot;</li>
+<li>Registrar entrada</li>
+<li>Ir a la sección &quot;Salida&quot;</li>
+<li>Ingresar el ID del ticket generado</li>
+<li>Ingresar horas (ej: 2)</li>
+<li>Registrar salida</li>
+</ol>
+<p><strong>Resultado esperado:</strong></p>
+<p>El vehículo se registra correctamente
+Se genera un ticket
+Se calcula el costo
+El lugar se libera</p>
+<p><strong>Resultado obtenido:</strong></p>
+<p>El sistema registró la entrada correctamente
+Se generó un ticket válido
+Se calculó el costo correctamente
+El espacio fue liberado exitosamente</p>
+<h3 id="prueba-2-consulta-de-ocupaci%C3%B3n"><strong>Prueba 2: Consulta de ocupación</strong></h3>
+<ol>
+<li>Acceder al dashboard</li>
+<li>Registrar uno o más vehículos</li>
+<li>Observar la cantidad de espacios ocupados y libres</li>
+</ol>
+<p><strong>Resultado esperado:</strong></p>
+<p>Los espacios ocupados aumentan
+Los espacios libres disminuyen</p>
+<p><strong>Resultado obtenido:</strong></p>
+<p>El sistema actualiza correctamente la ocupación
+Los datos mostrados coinciden con las acciones realizadas</p>
+<h2 id="conclusiones">Conclusiones</h2>
+<p>En esta práctica se aplicaron los conceptos fundamentales de la programación orientada a objetos, como encapsulación, abstracción, herencia y polimorfismo, los cuales permiten organizar mejor el código y hacerlo más mantenible. Además, se implementó el patrón MVC utilizando Flask, separando la lógica del sistema, la interfaz y el control.</p>
+<p>Gracias a esto, se logró desarrollar un sistema funcional de estacionamiento que es claro, escalable y fácil de modificar.</p>
+<h2 id="referencias">Referencias</h2>
+<p>Ichi.pro. (s.f.). Conceptos de programación orientada a objetos: encapsulación, abstracción, herencia y polimorfismo. Recuperado de:
+https://ichi.pro/es/conceptos-de-programacion-orientada-a-objetos-oop-encapsulacion-abstraccion-herencia-y-polimorfismo-236476330085767</p>
+<p>StudySmarter. (s.f.). Conceptos de POO: clases y objetos. Recuperado de:
+https://www.studysmarter.es/resumenes/ciencias-de-la-computacion/programacion-de-computadoras/conceptos-de-poo/</p>
+<p>Historia de la Empresa. (s.f.). ¿Qué es la programación orientada a objetos?. Recuperado de:
+https://historiadelaempresa.com/que-es-la-programacion-orientada-a-objetos</p>
+<h2 id="repositorio-en-github-y-mi-sitio-estatico">Repositorio en GitHub y mi sitio estatico</h2>
+<p><a href="https://github.com/andresmendez52-sys/portafolio">Portafolio Github</a></p>
+<p><a href="https://andresmendez52-sys.github.io/portafolio/">sitio HUGO</a></p>
+<h2 id="programa-funcional-en-el-buscador">programa funcional en el buscador</h2>
+<p>Entrada principal</p>
+<p><img src="simulador_parking.png" alt="regstrar entrada"></p>
+<p>Registrar entrada nueva</p>
+<p><img src="entrada.png" alt="regstrar entrada"></p>
+<p>Registrar salida</p>
+<p><img src="salida.png" alt="regstrar entrada"></p>
+
+</body>
+</html>
