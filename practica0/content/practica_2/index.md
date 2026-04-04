@@ -15,7 +15,9 @@ El programa consiste en un sistema que simula la gestión de un estacionamiento 
 
 El modelo del dominio se refiere a todas aquellas clases que representen la entidades del sistema, junto con sus atributos y sus metodos. Estas clases modelan objetos reales com opodrian ser un auto, una moto o un ticket
 
+### **Diagrama UML**
 
+![estructura](diagramaUML.jpeg)
 
 ### Lista de clases
 
@@ -237,3 +239,10 @@ https://www.studysmarter.es/resumenes/ciencias-de-la-computacion/programacion-de
 
 Historia de la Empresa. (s.f.). ¿Qué es la programación orientada a objetos?. Recuperado de:
 https://historiadelaempresa.com/que-es-la-programacion-orientada-a-objetos
+
+
+## Repositorio en GitHub y mi sitio estatico
+
+[Portafolio Github](https://github.com/andresmendez52-sys/portafolio)
+
+[sitio HUGO](https://andresmendez52-sys.github.io/portafolio/)
