@@ -246,3 +246,17 @@ https://historiadelaempresa.com/que-es-la-programacion-orientada-a-objetos
 [Portafolio Github](https://github.com/andresmendez52-sys/portafolio)
 
 [sitio HUGO](https://andresmendez52-sys.github.io/portafolio/)
+
+## programa funcional en el buscador
+
+Entrada principal
+
+![regstrar entrada](simulador_parking.png)
+
+Registrar entrada nueva
+
+![regstrar entrada](entrada.png)
+
+Registrar salida
+
+![regstrar entrada](salida.png)
