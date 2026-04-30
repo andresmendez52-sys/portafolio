@@ -1,0 +1,1 @@
+main = putStrLn "Hola desde VS Code"
