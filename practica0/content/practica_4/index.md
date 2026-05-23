@@ -1,8 +1,8 @@
----
++++
 date = "2026-05-22"
-draft: false
-title: "practica_4 Paradigma logico"
----
+draft = false
+title = "practica_4 Paradigma logico"
++++
 
 # Reporte de Actividad — Prolog
 
