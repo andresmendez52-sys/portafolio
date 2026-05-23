@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p>+++
+date = '2026-02-16T18:07:38-08:00'
+draft = false
+title = 'Practica_3'
++++</p>
+<h2 id="introduccion">Introduccion</h2>
+<p>En el presente documento se describe el proceso de instalación y configuración del entorno de desarrollo necesario para trabajar con el lenguaje de programación Haskell utilizando el editor Visual Studio Code, así como una breve explicación de sus fundamentos.</p>
+<p>Haskell es un lenguaje de programación de paradigma funcional que se caracteriza por ofrecer un nivel de abstracción más alto en comparación con lenguajes tradicionales como C, C++, Python o Java. A diferencia de estos, que siguen un enfoque imperativo, Haskell adopta un estilo declarativo en el que el programador se enfoca en describir qué resultado desea obtener.
+Caracterisado principalmente por su pureza funcional, donde las funciones no generan efectos secundarios, su sistema de tipado estático fuerte, que permite detectar errores antes de la ejecución y el uso de la evaluación perezosa, lo que optimiza el uso de recursos al ejecutar solo lo necesario.</p>
+<p>Gracias a estas cualidades, Haskell es un lenguaje potente y preciso, utilizado principalmente en entornos académicos y en el desarrollo de software donde se requiere alta confiabilidad. En este documento se mostrará cómo preparar el entorno y ejecutar una aplicación básica para comprender su funcionamiento.</p>
+<h2 id="lenguaje-de-programacion-hazkell">Lenguaje de programacion Hazkell</h2>
+<p>Haskell es un lenguaje de programación puramente funcional que fue desarrollado en los años 80 y 90. Se basa en el cálculo lambda y es conocido por su semántica no estricta y su tipado fuerte. Haskell promueve la inmutabilidad de los datos, lo que significa que una vez que se asigna un valor a una variable, este valor no puede ser modificado, lo que facilita la creación de programas más seguros y predecibles. Además, Haskell es ampliamente utilizado en campos como la inteligencia artificial, la bioinformática y las finanzas, lo que lo convierte en un lenguaje muy potente y flexible.</p>
+<p>Con su pu­bli­ca­ción, Haskell se convirtió prá­c­ti­ca­me­n­te en el estándar de los lenguajes de pro­gra­ma­ción fu­n­cio­na­les. Más tarde, se de­sa­rro­lla­ron numerosos derivados como Parallel Haskell, Eager Haskell, Haskell++ o Eden, que están es­tre­cha­me­n­te alineados con Haskell. Algunos de los lenguajes de pro­gra­ma­ción más modernos también se basan en Haskell. Por ejemplo, el lenguaje universal Python, uno de los lenguajes de pro­gra­ma­ción de internet más im­po­r­ta­n­tes, ha adoptado la notación lambda y la sintaxis de pro­ce­sa­mie­n­to de listas de Haskell.</p>
+<h2 id="como-instalarlo">Como Instalarlo</h2>
+<p>Para instalar Haskell, primero es necesario descargar GHCup, que es la herramienta oficial encargada de instalar todo el entorno de desarrollo necesario.</p>
+<p>Para ello, se debe ingresar a la página oficial de GHCup:
+https://www.haskell.org/ghcup/</p>
+<p>Ahí se muestra la documentación junto con el comando de instalación. Este comando se debe copiar y pegar en una ventana de PowerShell (es importante no abrirla como administrador).</p>
+<p>Una vez ejecutado el comando, comenzará el proceso de instalación. Durante este proceso, GHCup descargará e instalará automáticamente herramientas importantes como el compilador (GHC), el gestor de paquetes (Stack), entre otros componentes necesarios. Es posible que el proceso tarde algunos minutos dependiendo de la velocidad de internet y del equipo.</p>
+<p><img src="descarga_com.png" alt="pagina"></p>
+<p>Para verificar que la instalación se realizó correctamente, se pueden ejecutar los siguientes comandos en la terminal de PowerShell:</p>
+<pre class="hljs"><code><div>ghc -<span class="hljs-literal">-version</span>
+</div></code></pre>
+<p>o en su defecto</p>
+<pre class="hljs"><code><div>stack -<span class="hljs-literal">-version</span>
+</div></code></pre>
+<p>Si al ejecutar cualquiera de estos comandos aparece la versión instalada, significa que el entorno se instaló correctamente y está listo para usarse.</p>
+<p>Una vez instalado todo el entorno, el siguiente paso es configurar el editor de código Visual Studio Code para poder desarrollar y ejecutar programas en Haskell de forma más cómoda.</p>
+<p>Para ello, se deben instalar las extensiones oficiales de Haskell dentro de VS Code. Esto se hace entrando a la sección de extensiones del editor y buscando “Haskell”. Las extensiones principales permiten tener autocompletado, resaltado de sintaxis, detección de errores y mejor integración con el lenguaje.</p>
+<p>!<img src="extencion1Haskell.png" width="300">
+<img src="extencion2.png" width="300"></p>
+<p>Estas extensiones facilitan mucho el desarrollo, ya que ayudan a escribir código más rápido, detectar errores en tiempo real y ejecutar programas directamente desde el editor.</p>
+<h2 id="primer-programa-en-haskell">Primer Programa en Haskell</h2>
+<p>Una ves descargadas las extenciones de Hazkell podemos empezar a realizar nuestro primer programa en hakell sencillo, el clasico hola mundo.</p>
+<pre class="hljs"><code><div>-- Programa sencillo en Haskell
+
+main :: IO ()
+main = do
+    putStrLn &quot;Hola mundo&quot;
+</div></code></pre>
+<img src="hola.png" width="200">
+<p>En este ejemplo para imprimir el clasico texto &quot;Hola mundo&quot; consta de varios elementos:</p>
+<ol>
+<li>&quot;main :: IO()&quot; es la firma de la funcion indica que es la funcion principal del programa, es el equivalente de &quot;int main()&quot; en C.</li>
+</ol>
+<p><strong>main:</strong>  es la función principal (por donde empieza el programa).</p>
+<p><strong>IO:</strong>  significa que el programa va a interactuar con el usuario (entrada/salida).</p>
+<p><strong>( ):</strong> indica que no devuelve un valor importante, solo ejecuta acciones.</p>
+<ol start="2">
+<li>main = do: Aquí defines qué va a hacer el programa,Es como decir que a partir de aquí vienen las instrucciones.</li>
+</ol>
+<p><strong>do:</strong> se usa cuando vas a ejecutar varias acciones en orden, en este caso solo va a imprimir texto.</p>
+<ol start="3">
+<li>putStrLn &quot;Hola mundo&quot;: esta es la accion o proceso que va a realizar el programa al ejecutarce y despues pone un salto de pagina.</li>
+</ol>
+<p><strong>putStrLn:</strong> es una función que imprime texto en la pantalla.</p>
+<p><strong>&quot;Hola mundo&quot;:</strong> es el mensaje que se va a mostrar y al igual que la mayoria de los lenguajes de programacion, los texto que se van a mostrar en pantalla se colocan entre comillas dobles.</p>
+<p>A continuacion se muestra otro ejemplo mucho mas elaborado el cual es un blog echo con Haskell èl cual se encuentra en un repositorio en GitHub (https://github.com/steadylearner/Haskell/tree/main/examples/blog/todo):</p>
+<pre class="hljs"><code><div>
+<span class="hljs-comment">-- https://www.fpcomplete.com/haskell/tutorial/stack-script/</span>
+<span class="hljs-comment">-- #!/usr/local/bin/env stack</span>
+<span class="hljs-comment">-- stack --resolver lts-12.21 script</span>
+
+<span class="hljs-keyword">module</span> Main <span class="hljs-keyword">where</span>
+
+<span class="hljs-keyword">import</span> Configuration.Dotenv (<span class="hljs-title">defaultConfig</span>, <span class="hljs-title">loadFile</span>)
+<span class="hljs-keyword">import</span> Lib (<span class="hljs-title">prompt</span>)
+<span class="hljs-keyword">import</span> System.Environment (<span class="hljs-title">lookupEnv</span>)
+<span class="hljs-keyword">import</span> Web.Browser (<span class="hljs-title">openBrowser</span>)
+
+<span class="hljs-comment">-- $stack run</span>
+
+<span class="hljs-comment">-- $stack build</span>
+
+<span class="hljs-comment">-- $stack install</span>
+
+<span class="hljs-comment">-- $stack install --local-bin-path &lt;dir&gt;</span>
+
+<span class="hljs-comment">-- $stack install --local-bin-path .</span>
+
+<span class="hljs-comment">-- $./text-exe</span>
+
+<span class="hljs-comment">-- $stack Main.hs</span>
+
+<span class="hljs-comment">-- $chmod +x Main.hs</span>
+
+<span class="hljs-comment">-- $./Main.hs</span>
+
+<span class="hljs-comment">-- Should include .env and open browser.</span>
+
+<span class="hljs-title">main</span> :: <span class="hljs-type">IO</span> ()
+<span class="hljs-title">main</span> = <span class="hljs-keyword">do</span>
+  loadFile defaultConfig
+  website &lt;- lookupEnv <span class="hljs-string">"WEBSITE"</span>
+
+  <span class="hljs-keyword">case</span> website <span class="hljs-keyword">of</span>
+    <span class="hljs-type">Nothing</span> -&gt; error <span class="hljs-string">"You should set WEBSITE at .env file."</span>
+    <span class="hljs-type">Just</span> s -&gt; <span class="hljs-keyword">do</span>
+      result &lt;- openBrowser s
+      <span class="hljs-keyword">if</span> result
+        <span class="hljs-keyword">then</span> print (<span class="hljs-string">"Could open "</span> ++ s)
+        <span class="hljs-keyword">else</span> print (<span class="hljs-string">"Couldn't open "</span> ++ s)
+
+      putStrLn <span class="hljs-string">"Commands:"</span>
+      putStrLn <span class="hljs-string">"+ &lt;String&gt; - Add a TODO entry"</span>
+      putStrLn <span class="hljs-string">"- &lt;Int&gt;    - Delete the numbered entry"</span>
+      putStrLn <span class="hljs-string">"s &lt;Int&gt;    - Show the numbered entry"</span>
+      putStrLn <span class="hljs-string">"e &lt;Int&gt;    - Edit te numbered entry"</span>
+      putStrLn <span class="hljs-string">"l          - List todo"</span>
+      putStrLn <span class="hljs-string">"r          - Reverse todo"</span>
+      putStrLn <span class="hljs-string">"c          - Clear todo"</span>
+      putStrLn <span class="hljs-string">"q          - Quit"</span>
+      prompt [] <span class="hljs-comment">-- Start with the empty todo list.</span>
+
+<span class="hljs-comment">-- putStrLn "Commands:"</span>
+<span class="hljs-comment">-- putStrLn "+ &lt;String&gt; - Add a TODO entry"</span>
+<span class="hljs-comment">-- putStrLn "- &lt;Int&gt;    - Delete the numbered entry"</span>
+<span class="hljs-comment">-- putStrLn "s &lt;Int&gt;    - Show the numbered entry"</span>
+<span class="hljs-comment">-- putStrLn "e &lt;Int&gt;    - Edit te numbered entry"</span>
+<span class="hljs-comment">-- putStrLn "l          - List todo"</span>
+<span class="hljs-comment">-- putStrLn "r          - Reverse todo"</span>
+<span class="hljs-comment">-- putStrLn "c          - Clear todo"</span>
+<span class="hljs-comment">-- putStrLn "q          - Quit"</span>
+<span class="hljs-comment">-- prompt [] -- Start with the empty todo list.</span>
+</div></code></pre>
+<h3 id="salida"><strong>Salida</strong></h3>
+<img src="salida.png" width="280">
+<h3 id="como-funciona-el-codigo"><strong>Como funciona el codigo</strong></h3>
+<p>Esta aplicación ya es una TODO real, o sea, sirve para gestionar tareas desde la terminal.</p>
+<p>Permite cosas como:****</p>
+<ul>
+<li>Agregar tareas</li>
+<li>Eliminarlas</li>
+<li>Verlas</li>
+<li>Editarlas</li>
+<li>Limpiar la lista</li>
+</ul>
+<p>Además, al iniciar intenta abrir un navegador con una página web que tú defines en un archivo .env.</p>
+<h3 id="%C2%BFc%C3%B3mo-se-ejecuta"><strong>¿Cómo se ejecuta?</strong></h3>
+<p>Se puede ejecutar con Stack de varias formas:</p>
+<pre class="hljs"><code><div>stack run
+</div></code></pre>
+<p>o directamente como script:</p>
+<pre class="hljs"><code><div>stack main.hs
+</div></code></pre>
+<h3 id="%C2%BFc%C3%B3mo-se-crea-con-stack"><strong>¿Cómo se crea con Stack?</strong></h3>
+<p>Normalmente se hace así:</p>
+<pre class="hljs"><code><div>stack new todo-app
+<span class="hljs-built_in">cd</span> todo-app
+stack build
+stack run
+</div></code></pre>
+<p>este comando crea un stack y ingresa en ella, después reemplazas el contenido de Main.hs con este código</p>
+<h3 id="%C2%BFque-hace-exactamente-el-codigo"><strong>¿que hace exactamente el codigo?</strong></h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> Configuration.Dotenv
+<span class="hljs-keyword">import</span> Lib
+<span class="hljs-keyword">import</span> System.Environment
+<span class="hljs-keyword">import</span> Web.Browser
+</div></code></pre>
+<p>importa todo lo necesario para:</p>
+<ul>
+<li>Leer variables .env</li>
+<li>Usar la función prompt</li>
+<li>Leer variables del sistema</li>
+<li>Abrir el navegador</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-title">main</span> :: <span class="hljs-type">IO</span> ()
+<span class="hljs-title">main</span> = <span class="hljs-keyword">do</span>
+</div></code></pre>
+<p>Inicia el programa, desde aqui empieza toda la ejecucion de el programa y se define todo el proceso necesario</p>
+<pre class="hljs"><code><div><span class="hljs-title">loadFile</span> defaultConfig
+</div></code></pre>
+<p>carga archivos .env el cual contiene variables como &quot;WEBSITE=google.com&quot;</p>
+<pre class="hljs"><code><div><span class="hljs-title">website</span> &lt;- lookupEnv <span class="hljs-string">"WEBSITE"</span>
+</div></code></pre>
+<p>obtiene la variable WEBSITE para usar una URL guardada</p>
+<pre class="hljs"><code><div><span class="hljs-title">case</span> website <span class="hljs-keyword">of</span>
+  <span class="hljs-type">Nothing</span> -&gt; error <span class="hljs-string">"You should set WEBSITE..."</span>
+</div></code></pre>
+<p>si no existe marca error junto con un mensaje indicando el error</p>
+<pre class="hljs"><code><div><span class="hljs-type">Just</span> s -&gt; <span class="hljs-keyword">do</span>
+</div></code></pre>
+<p>si si existe, continua con el proceso</p>
+<pre class="hljs"><code><div><span class="hljs-title">result</span> &lt;- openBrowser s
+
+<span class="hljs-title">if</span> result
+  <span class="hljs-keyword">then</span> print (<span class="hljs-string">"Could open "</span> ++ s)
+  <span class="hljs-keyword">else</span> print (<span class="hljs-string">"Couldn't open "</span> ++ s)
+</div></code></pre>
+<p>intenta abrir la pagina web y muestra si funciono o no</p>
+<pre class="hljs"><code><div><span class="hljs-title">putStrLn</span> <span class="hljs-string">"Commands:"</span>
+</div></code></pre>
+<p>Muetra todas las funciones disponibles que el programa puede realizar (agregar, eliminar, listar, salir)</p>
+<pre class="hljs"><code><div><span class="hljs-title">prompt</span> []
+</div></code></pre>
+<p>Por ultimo se inicializa la lista como una lista vacia, la funcio prompt es la que maneja todas las operaciones del sistema</p>
+<p><a href="https://github.com/andresmendez52-sys/portafolio">Portafolio Github</a></p>
+<p><a href="https://andresmendez52-sys.github.io/portafolio/">sitio HUGO</a></p>
+
+</body>
+</html>

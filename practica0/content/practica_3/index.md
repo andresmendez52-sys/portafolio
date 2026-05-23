@@ -161,7 +161,7 @@ main = do
 ### **Como funciona el codigo** 
 Esta aplicación ya es una TODO real, o sea, sirve para gestionar tareas desde la terminal.
 
-Permite cosas como:
+Permite cosas como:****
 
 - Agregar tareas   
 - Eliminarlas  
