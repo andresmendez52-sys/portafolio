@@ -1,6 +1,6 @@
 +++
-draft = true
-title = 'Practica_4'
+draft = false
+title = 'practica_4'
 +++
 
 # Reporte de Actividad — Prolog
