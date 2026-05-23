@@ -4,9 +4,6 @@ draft = false
 title = "practica_4 Paradigma logico"
 +++
 
-# Reporte de Actividad — Prolog
-
-# Práctica 4
 
 Pablo Fernando Ruiz Perez  379207
 
