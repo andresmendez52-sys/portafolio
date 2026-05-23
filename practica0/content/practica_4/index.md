@@ -6,7 +6,7 @@ Pablo Fernando Ruiz Perez  379207
 
 Andres Mendez Huerta 380179
 
-Jose Carlos Gallegos Mariscal
+Jose Carlos Gallegos Mariscal  
 22 de Mayo de 2026  
 
 ## 1. Introducción
