@@ -2,32 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mi portafolio</title>
-    <link>https://example.org/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Mi portafolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Feb 2026 18:07:31 -0800</lastBuildDate>
-    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Feb 2026 18:07:38 -0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Practica_3</title>
+      <link>http://localhost:1313/practica_3/</link>
+      <pubDate>Mon, 16 Feb 2026 18:07:38 -0800</pubDate>
+      <guid>http://localhost:1313/practica_3/</guid>
+      <description>&lt;h2 id=&#34;introduccion&#34;&gt;Introduccion&lt;/h2&gt;&#xA;&lt;p&gt;En el presente documento se describe el proceso de instalación y configuración del entorno de desarrollo necesario para trabajar con el lenguaje de programación Haskell utilizando el editor Visual Studio Code, así como una breve explicación de sus fundamentos.&lt;/p&gt;&#xA;&lt;p&gt;Haskell es un lenguaje de programación de paradigma funcional que se caracteriza por ofrecer un nivel de abstracción más alto en comparación con lenguajes tradicionales como C, C++, Python o Java. A diferencia de estos, que siguen un enfoque imperativo, Haskell adopta un estilo declarativo en el que el programador se enfoca en describir qué resultado desea obtener.&#xA;Caracterisado principalmente por su pureza funcional, donde las funciones no generan efectos secundarios, su sistema de tipado estático fuerte, que permite detectar errores antes de la ejecución y el uso de la evaluación perezosa, lo que optimiza el uso de recursos al ejecutar solo lo necesario.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Practica_2: Paradigma orientado a objetos</title>
-      <link>https://example.org/practica_2/</link>
+      <link>http://localhost:1313/practica_2/</link>
       <pubDate>Mon, 16 Feb 2026 18:07:31 -0800</pubDate>
-      <guid>https://example.org/practica_2/</guid>
+      <guid>http://localhost:1313/practica_2/</guid>
       <description>&lt;h2 id=&#34;introduccion&#34;&gt;Introduccion&lt;/h2&gt;&#xA;&lt;p&gt;En este documento se describe el proceso y los conceptos básicos de la programación orientada a objetos, a través del desarrollo de un programa sencillo implementado en el lenguaje Python utilizando este paradigma. El objetivo es facilitar la comprensión de dichos conceptos mediante un ejemplo práctico.&lt;/p&gt;&#xA;&lt;p&gt;El programa consiste en un sistema que simula la gestión de un estacionamiento (parking), en el cual se pueden administrar los vehículos que ingresan y salen, así como calcular las ganancias generadas por cada automóvil.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Practica_1: Elementos basicos de los lenguajes de programacion</title>
-      <link>https://example.org/practica_1/</link>
+      <link>http://localhost:1313/practica_1/</link>
       <pubDate>Mon, 16 Feb 2026 18:06:38 -0800</pubDate>
-      <guid>https://example.org/practica_1/</guid>
+      <guid>http://localhost:1313/practica_1/</guid>
       <description>&lt;h2 id=&#34;introduccion&#34;&gt;Introduccion&lt;/h2&gt;&#xA;&lt;p&gt;En esta practica se enfoco en el desarrollo de un programa que simule la utilizacion de colas de impresion en lenguaje C. El programa se realizara en tres sesiones donde primero realizamos el programa utilizando memoria estatica, posteriormente en la sesion 2 migramos el programa a memoria dinamica atravez de listas enlazadas y finalmente en la sesion tres agregamos una obsion al memnu para crear una simulacion de proseso de impresion y mejorar el codigo&lt;/p&gt;</description>
     </item>
     <item>
       <title>Practica_0: Manejo de repositorio</title>
-      <link>https://example.org/practica0/</link>
+      <link>http://localhost:1313/practica0/</link>
       <pubDate>Mon, 16 Feb 2026 18:03:45 -0800</pubDate>
-      <guid>https://example.org/practica0/</guid>
+      <guid>http://localhost:1313/practica0/</guid>
       <description>&lt;h2 id=&#34;secciones&#34;&gt;secciones&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Uso markdown&lt;/li&gt;&#xA;&lt;li&gt;Uso de Git y Github&lt;/li&gt;&#xA;&lt;li&gt;Uso de HUGO y Github Pages&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;descripcion-de-la-practica&#34;&gt;descripcion de la practica&lt;/h2&gt;&#xA;&lt;p&gt;Esta practica consiste en aprende que es y com outilizar una herramienta muy util para crear texto para reportes o incluso paguinas web y como se utiliza com oe su sintaxis ademas del uso de repositorios en github diversos comando necesarios para usar git como guardar nuestro codigo en un repositorio en github, por ultimo el como convinar nuestros conocimientos en el huso de github y markdown para para crea una paguina web estatica atravez de otra rerramientas llamada HUGO y el uso de github pages.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Practica_4</title>
+      <link>http://localhost:1313/practica_4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/practica_4/</guid>
+      <description>&lt;h1 id=&#34;reporte-de-actividad--prolog&#34;&gt;Reporte de Actividad — Prolog&lt;/h1&gt;&#xA;&lt;h1 id=&#34;práctica-4&#34;&gt;Práctica 4&lt;/h1&gt;&#xA;&lt;p&gt;Pablo Fernando Ruiz Perez  379207&lt;/p&gt;&#xA;&lt;p&gt;Andres Mendez Huerta 380179&lt;/p&gt;&#xA;&lt;p&gt;Jose Carlos Gallegos Mariscal&lt;br&gt;&#xA;22 de Mayo de 2026&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-introducción&#34;&gt;1. Introducción&lt;/h2&gt;&#xA;&lt;p&gt;En la siguiente práctica se tiene como objetivo introducir el paradigma lógico mediante el lenguaje de programación Prolog. A diferencia del paradigma funcional o imperativo, la programación lógica no se centra en como resolver un problema paso a paso mediante instrucciones secuenciales, sino en que se conoce del problema, delegando la resolución de la tarea a una máquina de inferencia automática.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p>+++
+draft = false
+title = 'Practica_4'
++++</p>
+<h1 id="reporte-de-actividad--prolog">Reporte de Actividad — Prolog</h1>
+<h1 id="pr%C3%A1ctica-4">Práctica 4</h1>
+<p>Pablo Fernando Ruiz Perez  379207</p>
+<p>Andres Mendez Huerta 380179</p>
+<p>Jose Carlos Gallegos Mariscal<br>
+22 de Mayo de 2026</p>
+<h2 id="1-introducci%C3%B3n">1. Introducción</h2>
+<p>En la siguiente práctica se tiene como objetivo introducir el paradigma lógico mediante el lenguaje de programación Prolog. A diferencia del paradigma funcional o imperativo, la programación lógica no se centra en como resolver un problema paso a paso mediante instrucciones secuenciales, sino en que se conoce del problema, delegando la resolución de la tarea a una máquina de inferencia automática.</p>
+<p>Prolog se caracteriza por basarse en el cálculo de predicados de primer orden. Los programas en Prolog constan de una base de conocimientos conformada explícitamente por hechos y reglas. El entorno evalúa consultas cruzando estas definiciones de manera declarativa para encontrar respuestas válidas o comprobar la veracidad de una premisa mediante la unificación de términos y el mecanismo automático de backtracking.</p>
+<h2 id="2-instalaci%C3%B3n-y-verificaci%C3%B3n-desde-la-terminal-cmd">2. Instalación y Verificación desde la Terminal (CMD)</h2>
+<p>Para trabajar con Prolog, la implementación más extendida y estándar en el entorno académico es SWI-Prolog. En sistemas operativos Windows, se puede realizar la instalación de manera ágil desde la consola de comandos (CMD) o PowerShell utilizando el gestor de paquetes nativo de Windows (winget), evitando así descargas o configuraciones manuales de variables de entorno.</p>
+<h3 id="instalaci%C3%B3n-mediante-cmd">Instalación mediante CMD:</h3>
+<pre class="hljs"><code><div>winget install SWI-Prolog.SWI-Prolog
+</div></code></pre>
+<h3 id="verificaci%C3%B3n-de-la-instalaci%C3%B3n">Verificación de la instalación:</h3>
+<p>Una vez concluido el proceso de instalación, se debe verificar que el entorno esté correctamente configurado y accesible de forma global. Para ello, se abre una nueva ventana de la terminal (CMD) e introduce el siguiente comando para consultar la versión actual del compilador:</p>
+<pre class="hljs"><code><div>swipl --version
+</div></code></pre>
+<p>Al ejecutar este comando, la terminal retornará un mensaje detallando la versión instalada, lo cual confirma que el compilador está listo para usarse.</p>
+<p>Para iniciar el entorno interactivo de Prolog directamente desde la línea de comandos, basta con ingresar:</p>
+<pre class="hljs"><code><div>swipl
+</div></code></pre>
+<h2 id="3-sintaxis-de-hechos">3. Sintaxis de Hechos</h2>
+<p>Un hecho en Prolog representa una afirmación incondicional que se asume siempre como verdadera dentro de nuestra base de conocimientos. Describe las propiedades inherentes de un objeto o las relaciones fijas que existen entre varios objetos.</p>
+<h3 id="gu%C3%ADa-para-escribir-hechos">Guía para escribir hechos:</h3>
+<ul>
+<li>Los nombres de las propiedades, relaciones y objetos deben iniciar obligatoriamente con letra minúscula (los términos que inician con mayúscula son interpretados por el compilador como variables).</li>
+<li>El nombre de la relación aparece siempre como el primer término (denominado predicado).</li>
+<li>Los objetos involucrados aparecen como argumentos cerrados entre paréntesis y separados por comas.</li>
+<li>Un punto ( . ) debe terminar estrictamente cada hecho para indicar el fin de la cláusula.</li>
+</ul>
+<h3 id="ejemplos-de-hechos">Ejemplos de Hechos:</h3>
+<p>Propiedad Unaria: Establece una característica directa sobre un único objeto.</p>
+<pre class="hljs"><code><div>lazy(juan).
+</div></code></pre>
+<p>Declara formalmente el hecho de que Juan es perezoso. El predicado es &quot;lazy&quot; y el argumento es &quot;juan&quot;.</p>
+<p>Relación Binaria: Vincula dos objetos distintos bajo un mismo criterio conceptual.</p>
+<pre class="hljs"><code><div>loves_to_eat(jorge, pasta).
+</div></code></pre>
+<p>Declara el hecho de que &quot;A Jorge le encanta comer pasta&quot;, estableciendo una relación de preferencia alimentaria donde el sujeto es jorge y el objeto asociado es pasta.</p>
+<h2 id="4-sintaxis-de-reglas">4. Sintaxis de Reglas</h2>
+<p>Una regla representa una afirmación condicional dentro de la base de conocimientos. Establece que una conclusión o consecuencia es verdadera si y solo si una o más condiciones especificadas en el cuerpo de la regla se cumplen de manera simultánea. Permite que el sistema infiera de forma lógica nueva información a partir de los hechos preexistentes.</p>
+<h3 id="estructura-sint%C3%A1ctica">Estructura Sintáctica:</h3>
+<pre class="hljs"><code><div>cabeza :- cuerpo.
+</div></code></pre>
+<ul>
+<li>Cabeza (Conclusión): Especifica el predicado o hecho que se quiere demostrar o deducir.</li>
+<li>:-: Se traduce e interpreta textualmente como &quot;si&quot; o &quot;proviene de&quot;.</li>
+<li>Cuerpo (Condiciones): Consiste en una serie de hechos, reglas o metas secundarias que deben validarse. Si se separan por comas, representan una conjunción lógica. Si se separan por puntos y comas , representan una disyunción lógica.</li>
+</ul>
+<h3 id="ejemplos-de-reglas">Ejemplos de Reglas:</h3>
+<pre class="hljs"><code><div>happy(lili) :- dances(lili).
+</div></code></pre>
+<p>Establece de manera condicional que &quot;Lili se alegra si Lili baila&quot;. La cabeza happy(lili) se inferirá como verdadera únicamente si se logra comprobar el hecho dances(lili) en la base de datos de conocimiento.</p>
+<h4 id="condici%C3%B3n-compuesta-con-conjunci%C3%B3n-l%C3%B3gica">Condición Compuesta con Conjunción Lógica</h4>
+<pre class="hljs"><code><div>goToPlay(ryan) :- isClosed(school), free(ryan).
+</div></code></pre>
+<p>Determina la regla de que &quot;Ryan irá a jugar si la escuela está cerrada Y además él se encuentra libre&quot;. Ambas premisas en el cuerpo, separadas por la coma, deben satisfacerse al mismo tiempo para que la conclusión general sea declarada verdadera por el motor de inferencia.</p>
+<h2 id="5-relaciones-en-prolog">5. Relaciones en Prolog</h2>
+<p>En el diseño de programas en Prolog, el pilar fundamental consiste en especificar explícitamente las relaciones existentes entre los objetos y sus propiedades asociadas. Cuando el usuario realiza una consulta, el motor de ejecución busca correspondencias y patrones lógicos para validar si la relación planteada es verdadera o falsa.</p>
+<p>Por ejemplo, si planteamos la afirmación cotidiana &quot;José tiene una bicicleta&quot;, conceptualmente estamos declarando una relación de propiedad binaria que vincula formalmente al objeto jose con el objeto bicicleta.</p>
+<p>Para comprender cómo se estructuran y expanden de forma avanzada las relaciones, observemos el siguiente fragmento adaptado de una base de conocimientos familiar.</p>
+<pre class="hljs"><code><div><span class="hljs-comment">% Hechos base de género</span>
+female(pam).
+female(liz).
+male(tom).
+male(bob).
+
+<span class="hljs-comment">% Hechos base de parentesco (Relación raíz)</span>
+parent(pam, bob).
+parent(tom, bob).
+parent(tom, liz).
+</div></code></pre>
+<p>A partir de estas relaciones directas, podemos estructurar reglas lógicas que definen de forma abstracta nuevas relaciones más complejas y refinadas sin necesidad de declararlas explícitamente como hechos estáticos:</p>
+<h4 id="ejemplo-de-relaci%C3%B3n-madre">Ejemplo de Relación Madre:</h4>
+<pre class="hljs"><code><div>mother(<span class="hljs-symbol">X</span>, <span class="hljs-symbol">Y</span>) :- parent(<span class="hljs-symbol">X</span>, <span class="hljs-symbol">Y</span>), female(<span class="hljs-symbol">X</span>).
+</div></code></pre>
+<p>Esta regla define la relación donde X es madre de Y. Para que el motor lo valide, primero debe verificarse la relación de parentesco base  y simultáneamente comprobarse la propiedad biológica de que X es de género femenino.</p>
+<h4 id="ejemplo-de-relaci%C3%B3n-hermana-con-control-de-identidad">Ejemplo de Relación Hermana (Con Control de Identidad):</h4>
+<pre class="hljs"><code><div>sister(<span class="hljs-symbol">X</span>, <span class="hljs-symbol">Y</span>) :- parent(<span class="hljs-symbol">Z</span>, <span class="hljs-symbol">X</span>), parent(<span class="hljs-symbol">Z</span>, <span class="hljs-symbol">Y</span>), female(<span class="hljs-symbol">X</span>), <span class="hljs-symbol">X</span> \== <span class="hljs-symbol">Y</span>.
+</div></code></pre>
+<p>Modela de forma detallada la relación de hermandad. Determina que X es hermana de Y si comparten exactamente el mismo progenitor Z, se comprueba que X es del género requerido, y se introduce de forma indispensable el operador de desigualdad para asegurar que una persona no sea evaluada ni devuelta erróneamente como hermana de sí misma al realizar consultas generales sobre la base de datos.</p>
+<h2 id="6-ejercicios">6. Ejercicios</h2>
+<h3 id="torres-de-hanoir">Torres de Hanoir</h3>
+<p>Codigo:
+<img src="imagenes/Hanoi.png" alt=""></p>
+<p>Ejecucion:
+<img src="imagenes/Hanoi2.jpeg" alt=""></p>
+<h3 id="mono-y-el-platano">Mono Y el Platano</h3>
+<p>Codigo:
+<img src="imagenes/Mono.png" alt=""></p>
+<p>Ejecucion:
+<img src="imagenes/Mono2.jpeg" alt=""></p>
+<h2 id="7-conclusi%C3%B3n">7. Conclusión</h2>
+<p>A través del desarrollo de esta actividad, se comprendió de manera clara el funcionamiento del paradigma lógico por medio del lenguaje Prolog, contrastándolo directamente con enfoques previamente analizados como el paradigma funcional de Haskell. Se logró asimilar la transición de diseñar algoritmos basados en flujos secuenciales de control e instrucciones explícitas hacia un entorno completamente declarativo basado en la definición rigurosa de bases de conocimientos conformadas por hechos inmutables y reglas de inferencia.</p>
+<p>El dominio de la sintaxis permitió reconocer el cuidado estricto que requiere Prolog en la distinción de identificadores, donde el uso preciso de minúsculas define átomos o constantes y las mayúsculas delimitan variables dinámicas. Estas competencias técnicas cimientan la base necesaria para la posterior implementación de técnicas complejas dentro del paradigma, tales como la recursión avanzada, el control de flujos con backtracking y la manipulación estructurada de listas.</p>
+<p><a href="https://github.com/andresmendez52-sys/portafolio">Portafolio Github</a></p>
+<p><a href="https://andresmendez52-sys.github.io/portafolio/">sitio HUGO</a></p>
+
+</body>
+</html>
