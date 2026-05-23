@@ -1,7 +1,7 @@
-+++
-draft = false
-title = 'practica_4'
-+++
+---
+draft: false
+title: "practica_4 Prolog"
+---
 
 # Reporte de Actividad — Prolog
 
