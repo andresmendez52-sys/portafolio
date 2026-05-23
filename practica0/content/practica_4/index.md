@@ -1,3 +1,9 @@
++++
+draft = false
+title = 'Practica_4'
++++
+
+
 # Reporte de Actividad — Prolog
 
 # Práctica 4
